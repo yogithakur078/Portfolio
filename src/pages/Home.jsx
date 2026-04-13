@@ -1,5 +1,5 @@
 import React from "react";
- 
+
 import HeroSection from "../component/Hero";
 import ProjectsSection from "../component/ProjectsSection";
 import SkillsSection from "../component/SkillsSection";
@@ -9,14 +9,19 @@ import Footer from "../component/Footer";
 
 const Home = React.memo(() => {
   return (
-    <div className="bg-[#1f242d] min-h-screen">
+    <div className="bg-[#1f242d] min-h-screen overflow-x-hidden">
       
-      <HeroSection />
-      <ProjectsSection />
-      <SkillsSection />
-      <AboutSection />
-      <ContactSection />
-      <Footer />
+      {/* Main Wrapper (important) */}
+      <div className="w-full max-w-[1440px] mx-auto overflow-hidden">
+        
+        <HeroSection />
+        <ProjectsSection />
+        <SkillsSection />
+        <AboutSection />
+        <ContactSection />
+        <Footer />
+
+      </div>
     </div>
   );
 });

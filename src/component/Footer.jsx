@@ -3,42 +3,43 @@ import { FaGithub, FaYoutube, FaLinkedin } from "react-icons/fa";
 
 const Footer = React.memo(() => {
   return (
-    <footer className="mt-36 border-t border-[#ABB2BF] px-4 md:px-6 lg:px-24 pt-8 pb-6">
-      <div className="flex flex-col md:flex-row items-start justify-between gap-8">
+    <footer className="mt-28 md:mt-36 border-t border-[#ABB2BF] px-4 sm:px-6 lg:px-24 pt-6 sm:pt-8 pb-4 sm:pb-6">
+      <div className="flex flex-col sm:flex-row items-start justify-between gap-6 sm:gap-8">
 
         {/* Left */}
         <div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 flex-wrap">
             <img
               src="/logo.png"
               alt="logo"
               loading="lazy"
-              className="h-4 w-4 object-contain"
+              className="h-3 sm:h-4 w-3 sm:w-4 object-contain"
             />
-            <span className="text-base font-medium text-white">Yogesh</span>
-            <span className="text-base text-[#ABB2BF]">
+            <span className="text-sm sm:text-base font-medium text-white">Yogesh</span>
+            <span className="text-xs sm:text-base text-[#ABB2BF] truncate">
               Yogithaku078@gmail.com
             </span>
           </div>
 
-          <p className="mt-4 text-base text-white">
+          <p className="mt-2 sm:mt-4 text-sm sm:text-base text-white">
             Front-end developer
           </p>
         </div>
 
         {/* Right */}
         <div>
-          <p className="text-2xl font-medium text-white">Media</p>
+          <p className="text-lg sm:text-2xl font-medium text-white">Media</p>
 
-          <div className="mt-3 flex items-center gap-4 text-[#ABB2BF]">
+          <div className="mt-2 sm:mt-3 flex items-center gap-3 sm:gap-4 text-[#ABB2BF]">
 
             {/* GitHub */}
             <a
               href="https://github.com/yogithakur078"
               target="_blank"
               rel="noopener noreferrer"
+              className="hover:text-white transition-colors"
             >
-              <FaGithub className="text-lg hover:text-white transition" />
+              <FaGithub className="text-base sm:text-lg" />
             </a>
 
             {/* YouTube */}
@@ -46,8 +47,9 @@ const Footer = React.memo(() => {
               href="https://www.youtube.com/"
               target="_blank"
               rel="noopener noreferrer"
+              className="hover:text-red-500 transition-colors"
             >
-              <FaYoutube className="text-lg hover:text-red-500 transition" />
+              <FaYoutube className="text-base sm:text-lg" />
             </a>
 
             {/* LinkedIn */}
@@ -55,15 +57,16 @@ const Footer = React.memo(() => {
               href="https://www.linkedin.com/in/yogeshthakur078"
               target="_blank"
               rel="noopener noreferrer"
+              className="hover:text-blue-500 transition-colors"
             >
-              <FaLinkedin className="text-lg hover:text-blue-500 transition" />
+              <FaLinkedin className="text-base sm:text-lg" />
             </a>
 
           </div>
         </div>
       </div>
 
-      <p className="mt-12 text-center text-base text-[#ABB2BF]">
+      <p className="mt-6 sm:mt-12 text-center text-xs sm:text-base text-[#ABB2BF]">
         © Copyright 2026. Made by Yogesh
       </p>
     </footer>
