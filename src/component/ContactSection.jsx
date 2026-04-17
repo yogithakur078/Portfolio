@@ -66,7 +66,13 @@ const ContactSection = React.memo(() => {
                 }`}
             >
               <FaEnvelope className="text-xs sm:text-sm shrink-0" />
-              <span className="truncate">yogithakur078@gmail.com</span>
+
+              <a
+                href="mailto:yogithakur078@gmail.com"
+                className="truncate hover:text-[#C778DD] transition"
+              >
+                yogithakur078@gmail.com
+              </a>
             </div>
           </div>
         </div>
