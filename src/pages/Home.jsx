@@ -9,18 +9,17 @@ import Footer from "../component/Footer";
 
 const Home = React.memo(() => {
   return (
-    <div className="bg-[#1f242d] min-h-screen overflow-x-hidden">
+    <div className="bg-[#1f242d] min-h-screen overflow-hidden">
       
-      {/* Main Wrapper (important) */}
-      <div className="w-full max-w-[1440px] mx-auto overflow-hidden">
-        
-        <HeroSection />
-        <ProjectsSection />
-        <SkillsSection />
-        <AboutSection />
-        <ContactSection />
-        <Footer />
-
+       <div className="w-screen overflow-x-hidden max-w-[100vw]">
+        <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+          <HeroSection />
+          <ProjectsSection />
+          <SkillsSection />
+          <AboutSection />
+          <ContactSection />
+          <Footer />
+        </div>
       </div>
     </div>
   );

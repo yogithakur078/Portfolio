@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 
 export const useScrollAnimation = ({
   threshold = 0.15,
-  rootMargin = "0px 0px -50px 0px",
+  rootMargin = "0px 0px 0px 0px",
   triggerOnce = true,
 } = {}) => {
   const ref = useRef(null);

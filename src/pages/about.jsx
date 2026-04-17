@@ -66,7 +66,7 @@ const About = () => {
 
               <div className={`stagger-item ${isVisible ? "visible" : ""}`}>
                 <a
-                  href="/resume-yogesh-thakur.pdf"
+                  href="/resume_yogesh_thakur.pdf"
                   download
                   className="inline-flex items-center gap-2 border border-purple-500 px-4 py-2 text-white hover:bg-purple-500 hover:text-black transition-all duration-300"
                 >

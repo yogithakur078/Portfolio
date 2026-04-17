@@ -6,7 +6,7 @@ import Home from './pages/Home'
 import Work from './pages/work'
 import About from './pages/about'
 import Contact from './pages/contact'
-
+import FloatingChatbot from './component/FloatingChatbot'
 // Error Boundary component
 class ErrorBoundary extends React.Component {
   constructor(props) {
@@ -43,7 +43,7 @@ function App() {
   return (
     <ErrorBoundary>
       <Router>
-        <div className="bg-[#1f242d] min-h-screen text-white">
+        <div className="bg-[#1f242d] min-h-screen text-white overflow-x-hidden">
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
@@ -51,6 +51,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
+          <FloatingChatbot />
         </div>
       </Router>
     </ErrorBoundary>

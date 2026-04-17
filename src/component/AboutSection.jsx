@@ -4,42 +4,50 @@ import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 const AboutSection = React.memo(() => {
   const [ref, isVisible] = useScrollAnimation({
-    triggerOnce: false,
+    triggerOnce: true,
   });
 
   return (
     <section
       ref={ref}
-      className={`relative overflow-x-hidden mt-20 md:mt-[120px] px-4 sm:px-6 lg:pl-24 lg:pr-0 fade-in ${
+      className={`relative overflow-x-hidden mt-20 md:mt-[120px] px-4 sm:px-6 lg:px-12 fade-in ${
         isVisible ? "visible" : ""
       }`}
     >
-      <div className="flex flex-col lg:flex-row items-start justify-between lg:pr-24 gap-6 sm:gap-8 lg:gap-8">
+      <div className="flex flex-col lg:flex-row items-start justify-between gap-6 sm:gap-8 lg:gap-10 min-w-0">
         {/* Left Content */}
         <div
-          className={`w-full lg:w-[516px] slide-in-left ${
+          className={`w-full min-w-0 overflow-hidden slide-in-left ${
             isVisible ? "visible" : ""
           }`}
         >
-          <div className="flex items-center gap-4">
-            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-[24px] font-semibold text-white">
+          <div className="flex items-center gap-4 min-w-0">
+            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-[24px] font-semibold text-white shrink-0">
               <span className="text-[#C778DD]">#</span>about-me
             </h2>
-            <div className="hidden sm:block h-px w-40 sm:w-[150px] md:w-60 bg-[#C778DD]" />
+            <div className="hidden sm:block h-px flex-1 max-w-[240px] bg-[#C778DD]" />
           </div>
 
-          <div className="mt-4 sm:mt-6 text-sm sm:text-base lg:text-[16px] leading-6 lg:leading-[26px] text-[#ABB2BF]">
+          <div className="mt-4 sm:mt-6 text-sm sm:text-base lg:text-[16px] leading-6 lg:leading-[26px] text-[#ABB2BF] break-words">
             <p className={`stagger-item ${isVisible ? "visible" : ""}`}>
               Hello, I'm Yogesh!
             </p>
 
-            <p className={`mt-4 sm:mt-6 stagger-item ${isVisible ? "visible" : ""}`}>
+            <p
+              className={`mt-4 sm:mt-6 stagger-item ${
+                isVisible ? "visible" : ""
+              }`}
+            >
               I'm a self-taught front-end developer based in Chandigarh, India.
               I can develop responsive websites from scratch and turn them into
               modern, user-friendly web experiences.
             </p>
 
-            <p className={`mt-4 sm:mt-6 stagger-item ${isVisible ? "visible" : ""}`}>
+            <p
+              className={`mt-4 sm:mt-6 stagger-item ${
+                isVisible ? "visible" : ""
+              }`}
+            >
               Transforming my creativity and knowledge into websites has been my
               passion for over a year. I have worked on various frontend
               projects to build modern and responsive user interfaces.
@@ -57,7 +65,7 @@ const AboutSection = React.memo(() => {
 
         {/* Right Image Area */}
         <div
-          className={`relative overflow-hidden w-full max-w-[360px] mx-auto lg:mx-0 h-[260px] sm:h-[320px] lg:h-[420px] slide-in-right ${
+          className={`relative overflow-hidden w-full max-w-[360px] mx-auto lg:mx-0 lg:flex-shrink-0 h-[260px] sm:h-[320px] lg:h-[420px] slide-in-right ${
             isVisible ? "visible" : ""
           }`}
         >
@@ -79,11 +87,11 @@ const AboutSection = React.memo(() => {
             src="/about.png"
             alt="about"
             loading="lazy"
-            className="absolute bottom-0 left-1/2 -translate-x-1/2 lg:left-14 lg:translate-x-0 z-[2] w-[200px] sm:w-[240px] lg:w-[260px] h-auto object-contain"
+            className="absolute bottom-0 left-1/2 -translate-x-1/2 lg:left-14 lg:translate-x-0 z-[2] w-[200px] sm:w-[240px] lg:w-[260px] h-auto object-contain max-w-full"
           />
 
           {/* line */}
-          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 lg:left-[58px] lg:translate-x-0 h-px w-[200px] sm:w-[240px] lg:w-[272px] bg-[#C778DD]" />
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 lg:left-[58px] lg:translate-x-0 h-px w-[200px] sm:w-[240px] lg:w-[272px] max-w-full bg-[#C778DD]" />
         </div>
       </div>
     </section>

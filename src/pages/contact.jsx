@@ -44,7 +44,8 @@ const Contact = () => {
 
   return (
     <div className="bg-[#1f242d] overflow-x-hidden pt-16 sm:pt-20 pb-16 sm:pb-20">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-10">
+      <div className="w-screen overflow-x-hidden max-w-[100vw]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-10">
 
         {/* Header */}
         <div className="mb-12 sm:mb-16">
@@ -137,6 +138,7 @@ const Contact = () => {
               </div>
             )}
           </div>
+        </div>
         </div>
       </div>
     </div>

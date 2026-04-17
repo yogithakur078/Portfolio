@@ -11,7 +11,7 @@ const HeroSection = React.memo(() => {
   return (
     <section
       ref={ref}
-      className={`relative mt-10 md:mt-[62px] flex flex-col lg:flex-row w-full items-start justify-between px-4 sm:px-6 lg:pl-24 gap-6 sm:gap-8 lg:gap-0 fade-in ${
+      className={`relative mt-10 md:mt-[62px] flex flex-col lg:flex-row w-full items-start justify-between px-4 sm:px-6 lg:px-8 lg:pl-24 gap-6 sm:gap-8 lg:gap-0 overflow-x-hidden fade-in ${
         isVisible ? "visible" : ""
       }`}
     >
@@ -46,7 +46,7 @@ const HeroSection = React.memo(() => {
 
       {/* Right Image Area */}
       <div
-        className={`relative w-full max-w-[457px] mt-8 sm:mt-10 lg:mt-0 mx-auto lg:mx-0 slide-in-right ${
+        className={`relative w-full max-w-[400px] sm:max-w-[457px] mt-8 sm:mt-10 lg:mt-0 mx-auto lg:mx-0 overflow-hidden slide-in-right ${
           isVisible ? "visible" : ""
         }`}
       >
