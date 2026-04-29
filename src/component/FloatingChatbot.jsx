@@ -61,34 +61,41 @@ const FloatingChatbot = () => {
     });
   };
 
-  const sendToBackend = async (messageText) => {
-    try {
-      const res = await fetch("http://localhost:5000/chat", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ message: messageText }),
-      });
+ const sendToBackend = async (messageText) => {
+  try {
+    const res = await fetch("https://portfolio-backend-9sz7.onrender.com/chat", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ message: messageText }),
+    });
 
-      const data = await res.json();
-
-      setMessages((prev) => [
-        ...prev,
-        { text: data.reply, sender: "bot" },
-      ]);
-    } catch {
-      setMessages((prev) => [
-        ...prev,
-        {
-          text: "Server error! Please try again later.",
-          sender: "bot",
-        },
-      ]);
-    } finally {
-      setLoading(false);
+    // 👇 ADD THIS
+    if (!res.ok) {
+      throw new Error("API failed");
     }
-  };
+
+    const data = await res.json();
+
+    setMessages((prev) => [
+      ...prev,
+      { text: data.reply, sender: "bot" },
+    ]);
+  } catch (err) {
+    console.log("ERROR:", err);   // 👈 console me dekhna
+
+    setMessages((prev) => [
+      ...prev,
+      {
+        text: "Server error! Please try again later.",
+        sender: "bot",
+      },
+    ]);
+  } finally {
+    setLoading(false);
+  }
+};
 
   const sendMessage = async () => {
     if (!input.trim()) return;
